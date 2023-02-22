@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #banner {
+            position: relative;
+            height: 500px;
+            width: 2000px;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(255, 0, 0, 1) 9%, rgba(255, 136, 0, 1) 19%, rgba(255, 239, 0, 1) 28%, rgba(127, 251, 0, 1) 39%, rgba(50, 143, 0, 1) 48%, rgba(37, 72, 153, 1) 57%, rgba(0, 228, 255, 1) 67%, rgba(132, 0, 255, 1) 76%, rgba(250, 76, 255, 1) 87%, rgba(255, 255, 255, 1) 100%);
+            transform: scale(5) translate(30%, 0);
+        }
+
+        #wrapper {
+            position: relative;
+            height: 500px;
+            width: 500px;
+            overflow: hidden;
+        }
+        .rect {
+            position: absolute;
+            height: 40px;
+            width: 50px;
+            top: 230px;
+            left: 200px;
+            background-color: white;
+        }
+        .slider {
+            position: absolute;
+            bottom: 10px;
+            height: 25px;
+            width: 99%;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="banner">
+            <div class="rect"></div>
+        </div>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="90" class="slider" id="myRange" oninput="move(this)">
+    </div>
+    <script>
+        function move(slider) {
+            document.getElementById("banner").style.transform = `scale(5) translate(${slider.value -60}%, 0)`;
+        }
+    </script>
+</body>
+
+</html>
