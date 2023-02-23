@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .white{
+            background-color: white;
+        }
+        .black {
+            background-color: black;
+        }
+        #board td {
+            height: 100px;
+            width: 100px;
+        }
+        #board {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .sparrow {
+            display: block;
+            margin: auto;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table id="board"></table>
+
+    <script>
+        var html = "";
+        var n = 7;
+        for(var i = 0; i < n; i++) {
+            html += "<tr>";
+                for(var j = 0; j < n; j++) {
+                    html += `<td class="${(i+j)%2==0?'white':'black'}">`
+                    html += (i*j) % 7==4?"<img class='sparrow' src='img/sparrow.png'>":"";
+                    html += `</td>`;
+                }
+            html += "</tr>";
+        }
+        document.getElementById("board").innerHTML = html;
+    </script>
+</body>
+</html>
